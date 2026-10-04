@@ -4,12 +4,12 @@ const ContentSchema = new mongoose.Schema(
   {
     link: {
       type: String,
-      required:true,
+      required: true,
       trim: true,
     },
     type: {
       type: String,
-      enum: ['image', 'video', 'article', 'audio'],
+      enum: ["image", "video", "article", "audio"],
       required: true,
     },
     title: {
@@ -25,6 +25,10 @@ const ContentSchema = new mongoose.Schema(
       type: Types.ObjectId,
       ref: "User",
       required: true,
+    },
+    share: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true },

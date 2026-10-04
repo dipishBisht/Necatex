@@ -1,7 +1,8 @@
 import { Router } from "express";
+import { createShareableLink, getShareableLink } from "../controller/brain.js";
 
 export const brainRouter = Router();
 
-brainRouter.post("/share", (req, res) => {});
+brainRouter.post("/share/:id", createShareableLink);
 
-brainRouter.get("/:shareLink", (req, res) => {});
+brainRouter.get("/:shareLink", getShareableLink);
